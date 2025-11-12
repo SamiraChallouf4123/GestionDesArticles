@@ -1,0 +1,44 @@
+﻿@model IEnumerable<GestionDesArticles.Models.Category>
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Catégories</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+        @if (Model == null || !Model.Any())
+        {
+            <li class="list-group-item text-muted">Aucune catégorie disponible.</li>
+        }
+        else
+        {
+            @foreach (var categorie in Model)
+            {
+                <li class="list-group-item">
+                    <div class="fw-bold text-dark">@categorie.CategoryName</div>
+
+                    @if (categorie.Products != null && categorie.Products.Any())
+                    {
+                        <ul class="list-unstyled ms-3 mt-2">
+                            @foreach (var type in categorie.Products.Select(p => p.Type).Distinct())
+                            {
+                                <li>
+                                    <a class="text-decoration-none text-secondary"
+                                       asp-controller="Product"
+                                       asp-action="Index"
+                                       asp-route-categoryId="@categorie.CategoryId"
+                                       asp-route-type="@type">
+                                         @type
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <div class="text-muted small ms-3">Aucun type disponible</div>
+                    }
+                </li>
+            }
+        }
+    </ul>
+</div>

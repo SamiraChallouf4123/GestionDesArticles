@@ -1,0 +1,53 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<GestionDesArticles.Models.Product>
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    ViewData["Title"] = "Liste des produits";
+}
+
+@if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+{   <div class="text-end mb-3">
+       <a asp-action="Create" class="btn btn-add">➕ Ajouter un produit</a>
+    </div>
+}
+<div class="products-container">
+    @foreach (var product in Model)
+    {
+        var photoPath = "~/images/" + (product.Image ?? "noimage.jpg");
+        <div class="product-card">
+            <img class="product-img" src="@photoPath" asp-append-version="true" alt="@product.Name" />
+
+            <div class="product-info">
+                <h4 class="product-name">@product.Name</h4>
+                <p><b>Prix :</b> @product.Price DT</p>
+                @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                {
+                    <p><b> Quantité :</b> @product.QteStock</p>
+                }
+                <p><b> Catégorie :</b> @product.Category.CategoryName</p>
+            </div>
+
+            <div class="product-actions">
+                <a asp-controller="Product" asp-action="Details" asp-route-id="@product.ProductId"
+                   class="btn btn-view">👁️ Voir</a>
+
+                <a asp-controller="Panier" asp-action="AddProduct"
+                   asp-route-id="@product.ProductId"
+                   class="btn btn-cart">🛒 Ajouter au panier</a>
+            </div>
+        </div>
+    }
+</div>
+
+<!-- Pagination -->
+<div class="pagination">
+    @for (int i = 1; i <= ViewBag.TotalPages; i++)
+    {
+        <a asp-action="Index" asp-route-categoryId="@ViewBag.CategoryId"
+           asp-route-page="@i" class="btn btn-secondary m-1">
+            @i
+        </a>
+    }
+</div>
+

@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Accueil";
+}
+
+<!-- SECTION HERO -->
+<section class="hero d-flex align-items-center text-center text-white"
+         style="background: linear-gradient(90deg, rgba(255,193,7,0.8), rgba(255,179,0,0.8)), url('/images/hero-bg.jpg') center/cover no-repeat; height: 70vh; border-radius: 12px; margin-top:20px;">
+    <div class="container">
+        <h1 class="display-3 fw-bold mb-3 animate__animated animate__fadeInDown">Bienvenue sur notre plateforme</h1>
+        <p class="lead mb-4 animate__animated animate__fadeInUp">
+            Découvrez, commandez et suivez vos produits facilement depuis une interface moderne et intuitive.
+        </p>
+        <a asp-controller="Product" asp-action="Index" class="btn btn-dark btn-lg me-2 shadow">
+            <i class="bi bi-bag-fill me-1"></i> Voir les Produits
+        </a>
+        <a asp-controller="Category" asp-action="Index" class="btn btn-outline-light btn-lg shadow">
+            <i class="bi bi-tags-fill me-1"></i> Explorer les Catégories
+        </a>
+    </div>
+</section>
+
+<!-- SECTION ETAPES -->
+<section class="container py-5">
+    <h2 class="text-center fw-bold mb-5">🛍️ Les étapes de votre parcours</h2>
+    <div class="row text-center g-4">
+
+        <!-- Étape 1 -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <i class="bi bi-search-heart-fill text-warning display-4 mb-3"></i>
+                    <h5 class="fw-bold"> Consulter les produits</h5>
+                    <p class="text-muted">Parcourez nos différentes catégories et découvrez les produits disponibles avec leurs détails et prix.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Étape 2 -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <i class="bi bi-person-plus-fill text-warning display-4 mb-3"></i>
+                    <h5 class="fw-bold">Créer un compte</h5>
+                    <p class="text-muted">Inscrivez-vous rapidement pour bénéficier d’un suivi de commande personnalisé et d’un panier sauvegardé.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Étape 3 -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <i class="bi bi-cart-check-fill text-warning display-4 mb-3"></i>
+                    <h5 class="fw-bold"> Passer une commande</h5>
+                    <p class="text-muted">Ajoutez vos articles préférés au panier, validez votre commande et recevez-les chez vous en toute sécurité.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SECTION CTA -->
+<section class="text-center py-5" style="background-color:#fff3cd;">
+    <div class="container">
+        <h3 class="fw-bold mb-3">Prêt à commencer ?</h3>
+        <p class="text-muted mb-4">Explorez notre boutique, découvrez nos produits et vivez une expérience simple et rapide.</p>
+        <a asp-controller="Account" asp-action="Register" class="btn btn-warning btn-lg shadow-sm">
+            <i class="bi bi-person-plus-fill me-1"></i> Créer un compte
+        </a>
+    </div>
+</section>

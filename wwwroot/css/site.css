@@ -1,0 +1,345 @@
+﻿/* === 🎨 Style Moderne Jaune pour E-commerce GestionDesArticles === */
+
+/* === GLOBAL === */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #fafafa;
+    color: #333;
+}
+
+/* === NAVBAR === */
+.navbar {
+    background: linear-gradient(90deg, #ffca28, #ffb300);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+    .navbar .navbar-brand {
+        color: white !important;
+        font-weight: 700;
+        font-size: 1.3rem;
+        letter-spacing: 0.5px;
+    }
+
+    .navbar .nav-link {
+        color: white !important;
+        font-weight: 500;
+        transition: color 0.3s ease, transform 0.2s ease;
+    }
+
+        .navbar .nav-link:hover {
+            color: #212121 !important;
+            transform: scale(1.05);
+        }
+
+/* === Bouton Catégories === */
+#toggleMenu {
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 4px 6px;
+    transition: all 0.3s ease;
+}
+
+    #toggleMenu:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+
+/* === Barre de recherche === */
+form.d-flex input[type="search"] {
+    border-radius: 20px;
+    border: 1px solid #eee;
+    padding: 6px 12px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+    form.d-flex input[type="search"]:focus {
+        border-color: #ffb300;
+        box-shadow: 0 0 6px rgba(255, 193, 7, 0.6);
+    }
+
+form.d-flex button {
+    background-color: #212121;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 6px 14px;
+    transition: all 0.3s ease;
+}
+
+    form.d-flex button:hover {
+        background-color: #ffca28;
+        color: #212121;
+    }
+
+/* === MENU LATÉRAL === */
+#sidebar {
+    background-color: #fff8e1;
+    border-right: 3px solid #ffeb3b;
+    min-height: 100vh;
+    padding-top: 20px;
+    transition: all 0.3s ease;
+}
+
+    #sidebar h5 {
+        color: #fbc02d;
+        font-weight: 600;
+        margin-left: 10px;
+    }
+
+    #sidebar ul li {
+        padding: 8px 14px;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+        #sidebar ul li:hover {
+            background-color: #fff176;
+            transform: translateX(4px);
+            cursor: pointer;
+        }
+
+/* === CONTENU PRINCIPAL === */
+main {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.1);
+}
+
+/* === CARDS === */
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(255, 193, 7, 0.4);
+    }
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-weight: 600;
+    color: #333;
+}
+
+.card-text {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* === BOUTONS === */
+.btn {
+    background-color: #ffca28;
+    color: #212121;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 8px 14px;
+    transition: all 0.3s ease;
+}
+
+    .btn:hover {
+        background-color: #ffb300;
+        color: #fff;
+    }
+
+/* === FOOTER === */
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+    footer a {
+        color: #ffca28;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+/* === RESPONSIVE === */
+@media (max-width: 992px) {
+    #sidebar {
+        display: none;
+    }
+
+        #sidebar.show {
+            display: block;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 220px;
+            z-index: 1000;
+            background: #fff8e1;
+        }
+
+    #mainContent {
+        padding: 10px;
+    }
+}
+
+/* === PAGE LISTE DES PRODUITS === */
+.page-title {
+    color: #333;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* === Bouton Ajouter === */
+.btn-add {
+    background-color: #ffca28;
+    color: #212121;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+    .btn-add:hover {
+        background-color: #ffb300;
+        color: white;
+    }
+
+/* === Conteneur de cartes produits === */
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* === Carte produit === */
+.product-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    width: 300px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+    .product-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 6px 15px rgba(255, 193, 7, 0.4);
+    }
+
+/* === Image produit corrigée === */
+.product-img {
+    width: 100%;
+    height: 180px; /* un peu plus petite */
+    object-fit: contain; /* garde les proportions sans déformation */
+    background-color: #fff; /* ajoute un fond blanc derrière si nécessaire */
+    padding: 10px; /* espace autour de l’image */
+    border-bottom: 3px solid #ffeb3b;
+}
+
+/* === Infos produit === */
+.product-info {
+    text-align: left;
+    padding: 15px;
+    width: 100%;
+}
+
+.product-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* === Actions produit === */
+.product-actions {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: auto;
+    padding: 10px 0;
+}
+
+.btn-view {
+    background-color: #212121;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-view:hover {
+        background-color: #ffca28;
+        color: #212121;
+    }
+
+.btn-cart {
+    background-color: #ffca28;
+    color: #212121;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+    .btn-cart:hover {
+        background-color: #ffb300;
+        color: white;
+    }
+
+/* === Pagination === */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    gap: 10px;
+}
+
+.page-link {
+    background-color: #f5f5f5;
+    color: #333;
+    border-radius: 8px;
+    padding: 8px 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+    .page-link:hover {
+        background-color: #ffca28;
+        color: #212121;
+    }
+
+    .page-link.active {
+        background-color: #ffb300;
+        color: white;
+    }
