@@ -58,11 +58,11 @@ Avant de commencer, assurez-vous d’avoir installé :
 - Commandes utilisées
 Dans Visual Studio, ouvrez :
   Outils → Gestionnaire de package NuGet → Console du Gestionnaire de package
-✔️ 1. Créer la première migration
+1. Créer la première migration
   ```bash
   Add-Migration InitialCreate
   ```
-✔️ 2. Générer la base de données
+2. Générer la base de données
   ```bash
   Update-Database
   ```
@@ -73,28 +73,33 @@ Dans Visual Studio, ouvrez :
 Pour lancer le projet, il suffit d’utiliser le bouton :
 - Exécution sans débogage (Ctrl + F5): Ce bouton démarre directement l’application sans activer le mode debug.
 - Alternative en ligne de commande:
-  ```bash
+```bash
   dotnet run
-  ```
+```
 Une fois le projet lancé, ouvrez votre navigateur et accédez à : "https://localhost:7289"
 
 **Page Accueil** 
 <img width="1304" height="609" alt="image" src="https://github.com/user-attachments/assets/9c7ec689-7ef3-4714-b118-6ac86805b5e5" />
 
+**Page Article** 
+<img width="1303" height="649" alt="image" src="https://github.com/user-attachments/assets/3c5268f9-1b25-44c4-b225-16fa847429c5" />
 
+**Page Panier**
+<img width="1300" height="646" alt="image" src="https://github.com/user-attachments/assets/96a5ccaf-9318-4803-821d-9f336309c68b" />
 
+**Page Login**
+<img width="1294" height="638" alt="image" src="https://github.com/user-attachments/assets/5fa56981-7ff9-4c5a-b9c9-7c6cd7e4f995" />
 
-
-
-
-
+**Page Roles**
+<img width="1301" height="646" alt="image" src="https://github.com/user-attachments/assets/cd37d9ce-e204-41cb-863e-7ba625c4dc93" />
 
 
 
 
 ## Structure du Projet
 Voici un aperçu de l'organisation du projet :
-GestionDesArticles/
+```plaintext
+  GestionDesArticles/
 │
 ├── Controllers/               # Contrôleurs (ArticleController, CategoryController, AccountController, etc.)
 ├── Models/                    # Classes métiers et entités (Article, Category)
@@ -107,6 +112,8 @@ GestionDesArticles/
 ├── appsettings.json           # Configuration de l’application
 ├── Program.cs / Startup.cs    # Point d’entrée et configuration des services
 └── README.md                  # Documentation du projet
+```
+
 
 
 
